@@ -1,5 +1,6 @@
-import java.net.UnknownHostException;
-import Servlet.*;
+package Application;
+
+import Application.Servlet.LoginServlet;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.DefaultServlet;
 import org.eclipse.jetty.servlet.ServletContextHandler;

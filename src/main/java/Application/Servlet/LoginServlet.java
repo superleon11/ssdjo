@@ -1,5 +1,5 @@
-package Servlet;
-import H2Codechecker;
+package Application.Servlet;
+import Application.H2Codechecker;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,9 +7,9 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Map;
 
-public class LoginServlet {
+public class LoginServlet extends BaseServlet{
 
-
+    private static final String LOGIN_TEMPLATE = "login.mustache";
 
     private H2Codechecker h2Codechecker;
 
@@ -24,7 +24,7 @@ public class LoginServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String user = user(request);
         if (user != null) {
-            response.sendRedirect(response.encodeRedirectURL("/milestone"));
+            response.sendRedirect(response.encodeRedirectURL("/Codecheck"));
         } else {
             Map<String,Object> map = baseMap(request);
             showView(response, LOGIN_TEMPLATE, map);

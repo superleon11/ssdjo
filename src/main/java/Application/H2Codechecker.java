@@ -1,7 +1,9 @@
+package Application;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
-import Login.PasswordHash;
+import Application.Login.PasswordHash;
 
 public class H2Codechecker implements AutoCloseable {
 
