@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
+<main>
+    <div style="margin: auto; margin-top: 15px;">
+        <div>
+            <h1>Login</h1>
+        </div>
+        <p>Please Login to our Milestone system or Register if you are new.</p>
+
+
+        <form method="POST" action="/loginServlet">
+            <div>
+                <label for="userName">Username:</label>
+                <input type="text" name="userName" id="userName"/>
+
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password"/>
+
+            </div>
+            <div>
+                <button type="submit" name="submit" value="login">Log in</button>
+                <button type="submit" name="submit" value="register">Register</button>
+            </div>
+        </form>
+    </div>
+</main>
+</body>
+</html>

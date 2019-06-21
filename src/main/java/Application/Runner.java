@@ -1,19 +1,23 @@
-import java.net.UnknownHostException;
-import Servlet.*;
+package Application;
 
-import java.net.UnknownHostException;
+import Application.Servlet.LoginServlet;
+import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.DefaultServlet;
+import org.eclipse.jetty.servlet.ServletContextHandler;
+import org.eclipse.jetty.servlet.ServletHolder;
+
 
 
 public class Runner {
 
 
+    private final H2Codechecker h2Codechecker;
 
         private static final int PORT = 9001;
 
-        private Runner() throws UnknownHostException {
+        private Runner() {
 
-
-
+            h2Codechecker = new H2Codechecker();
 
         }
 
@@ -33,7 +37,7 @@ public class Runner {
          */
 
 
-            LoginServlet login = new LoginServlet();
+            LoginServlet login = new LoginServlet(h2Codechecker);
             handler.addServlet(new ServletHolder(login), "/loginServlet");
 
 
